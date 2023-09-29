@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 6.0.1 | Copyright Dean Attali 2023 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  <title>netmikoライブラリに関して</title>
+
+  
+  <meta name="author" content="Jun Egawa">
+  
+
+  <meta name="description" content="netmiko library">
+
+  
+
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="junenu.dev" href="http://localhost:4000/feed.xml">
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  <meta property="og:site_name" content="junenu.dev">
+  <meta property="og:title" content="netmikoライブラリに関して">
+  <meta property="og:description" content="netmiko library">
+
+  
+  <meta property="og:image" content="http://localhost:4000/assets/img/avatar-icon.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="Jun Egawa">
+  <meta property="og:article:published_time" content="2023-09-11T00:00:00+09:00">
+  <meta property="og:url" content="http://localhost:4000/2023-09-11-netmiko-library/">
+  <link rel="canonical" href="http://localhost:4000/2023-09-11-netmiko-library/">
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:site" content="@junenu41">
+  <meta name="twitter:creator" content="@junenu41">
+
+  <meta property="twitter:title" content="netmikoライブラリに関して">
+  <meta property="twitter:description" content="netmiko library">
+
+  
+  <meta name="twitter:image" content="http://localhost:4000/assets/img/avatar-icon.png">
+  
+
+  
+
+
+  
+
+  
+
+</head>
+
+
+<body>
+
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular"><a class="navbar-brand" href="http://localhost:4000/">junenu.dev</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/aboutme">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/disclaimer">Discaimer</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-search-link" href="#" title="Search">
+            <span id="nav-search-icon" class="fa fa-search"></span>
+            <span id="nav-search-text">Search</span>
+          </a>
+        </li></ul>
+  </div>
+
+  
+
+  
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        <a href="http://localhost:4000/">
+          <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/avatar-icon.png" />
+        </a>
+      </div>
+    </div>
+  
+
+</nav>
+
+
+
+<div id="beautifuljekyll-search-overlay">
+
+  <div id="nav-search-exit" title="Exit search">✕</div>
+  <input type="text" id="nav-search-input" placeholder="Search">
+  <ul id="search-results-container"></ul>
+  
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    var searchjson = '[ \
+       \
+        { \
+          "title"    : "ProxmoxをHM90にインストールする", \
+          "desc"     : "ProxmoxをHM90にインストールする", \
+          "category" : "proxmox", \
+          "url"      : "/2023-09-29-proxmox-installonHM90/", \
+          "date"     : "September 29, 2023" \
+        }, \
+       \
+        { \
+          "title"    : "Netbox Install", \
+          "desc"     : "Netbox Install", \
+          "category" : "netboxdocker", \
+          "url"      : "/2023-09-28-netbox-install-log/", \
+          "date"     : "September 28, 2023" \
+        }, \
+       \
+        { \
+          "title"    : "Test", \
+          "desc"     : "Test", \
+          "category" : "testmarkdown", \
+          "url"      : "/2023-09-27-test/", \
+          "date"     : "September 27, 2023" \
+        }, \
+       \
+        { \
+          "title"    : "telnetlibライブラリに関して", \
+          "desc"     : "telnetlibライブラリに関して", \
+          "category" : "pythontelnetlib", \
+          "url"      : "/2023-09-11-telnetlib-library/", \
+          "date"     : "September 11, 2023" \
+        }, \
+       \
+        { \
+          "title"    : "netmikoライブラリに関して", \
+          "desc"     : "netmikoライブラリに関して", \
+          "category" : "pythonnetmiko", \
+          "url"      : "/2023-09-11-netmiko-library/", \
+          "date"     : "September 11, 2023" \
+        }, \
+       \
+        { \
+          "title"    : "napalmライブラリを使ってNW機器の情報を取得する", \
+          "desc"     : "napalmライブラリを使ってNW機器の情報を取得する", \
+          "category" : "pythonnapalm", \
+          "url"      : "/2023-08-26-napalm-library/", \
+          "date"     : "August 26, 2023" \
+        }, \
+       \
+        { \
+          "title"    : "minikubeの構築と動作確認", \
+          "desc"     : "minikubeの構築と動作確認", \
+          "category" : "k8skubernetesminikube", \
+          "url"      : "/2023-08-25-minikube/", \
+          "date"     : "August 25, 2023" \
+        }, \
+       \
+        { \
+          "title"    : "PythonでJSONを扱う", \
+          "desc"     : "PythonでJSONを扱う", \
+          "category" : "pythonjson", \
+          "url"      : "/2023-08-24-python-jsonmodule/", \
+          "date"     : "August 24, 2023" \
+        }, \
+       \
+       \
+        { \
+          "title"    : "About me", \
+          "desc"     : "About me", \
+          "category" : "page", \
+          "url"      : "/aboutme/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Disclaimer", \
+          "desc"     : "Disclaimer", \
+          "category" : "page", \
+          "url"      : "/disclaimer/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "junenu.dev", \
+          "desc"     : "junenu.dev", \
+          "category" : "page", \
+          "url"      : "/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Tag Index", \
+          "desc"     : "Tag Index", \
+          "category" : "page", \
+          "url"      : "/tags/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "junenu.dev", \
+          "desc"     : "junenu.dev", \
+          "category" : "page", \
+          "url"      : "/page2/", \
+          "date"     : "January 1, 1970" \
+        } \
+       \
+    ]';
+    searchjson = JSON.parse(searchjson);
+
+    var sjs = SimpleJekyllSearch({
+      searchInput: document.getElementById('nav-search-input'),
+      resultsContainer: document.getElementById('search-results-container'),
+      json: searchjson
+    });
+  </script>
+</div>
+
+
+
+
+
+  <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>netmikoライブラリに関して</h1>
+          
+            
+              <h2 class="post-subheading">netmiko library</h2>
+            
+          
+
+          
+            <span class="post-meta">Posted on September 11, 2023</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</header>
+
+
+
+
+<div class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+        
+        
+        
+
+        <div id="header-gh-btns">
+          
+            
+              
+                  <iframe src="https://ghbtns.com/github-btn.html?user=junenu&type=follow&count=true" frameborder="0" scrolling="0" width="220px" height="20px"></iframe>
+              
+            
+          
+        </div>
+      
+
+      
+
+      <article role="main" class="blog-post">
+        <h2 id="はじめに">はじめに</h2>
+
+<p>Pythonの<code class="language-plaintext highlighter-rouge">netmiko</code>ライブラリを使用することで、ネットワーク機器にSSHで接続し、コマンドを実行したり、設定を変更したりすることができます。この記事では、<code class="language-plaintext highlighter-rouge">netmiko</code>ライブラリを使って、ネットワーク機器に接続し、コマンドを実行し、設定を変更する方法を解説します。</p>
+
+<h2 id="機器">機器</h2>
+<ul>
+  <li>コマンドを実行する機器：MacOS（Pythonが動けばなんでもOKです）</li>
+  <li>対象のNW機器：vMX（Juniperさんが提供しているvLABs上の機器を利用）</li>
+</ul>
+
+<h2 id="netmikoとは">netmikoとは</h2>
+
+<p><code class="language-plaintext highlighter-rouge">netmiko</code>は、複数のネットワークデバイスのベンダーに対応した、Pythonのライブラリです。<code class="language-plaintext highlighter-rouge">netmiko</code>を使用することで、SSHを使ってネットワークデバイスに接続し、コマンドの実行や設定の変更を行うことができます。</p>
+
+<h2 id="pythonスクリプト">Pythonスクリプト</h2>
+
+<p>以下は、<code class="language-plaintext highlighter-rouge">netmiko</code>を使ってJuniperのネットワークデバイスに接続し、ホスト名を変更するPythonスクリプトの例です。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">netmiko</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="k">def</span> <span class="nf">send_show_command</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">commands</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">netmiko</span><span class="p">.</span><span class="n">ConnectHandler</span><span class="p">(</span><span class="o">**</span><span class="n">device</span><span class="p">)</span> <span class="k">as</span> <span class="n">con</span><span class="p">:</span>
+            <span class="n">con</span><span class="p">.</span><span class="n">enable</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">command</span> <span class="ow">in</span> <span class="n">commands</span><span class="p">:</span>
+                <span class="n">output</span> <span class="o">=</span> <span class="n">con</span><span class="p">.</span><span class="n">send_command</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+                <span class="n">result</span><span class="p">[</span><span class="n">command</span><span class="p">]</span> <span class="o">=</span> <span class="n">output</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">except</span> <span class="p">(</span><span class="n">netmiko</span><span class="p">.</span><span class="n">NetmikoTimeoutException</span><span class="p">,</span> <span class="n">netmiko</span><span class="p">.</span><span class="n">NetmikoAuthenticationException</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">send_config_set</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">commands</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">commands</span> <span class="o">+=</span> <span class="p">[</span><span class="s">"commit"</span><span class="p">]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">netmiko</span><span class="p">.</span><span class="n">ConnectHandler</span><span class="p">(</span><span class="o">**</span><span class="n">device</span><span class="p">)</span> <span class="k">as</span> <span class="n">con</span><span class="p">:</span>
+            <span class="n">con</span><span class="p">.</span><span class="n">enable</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">command</span> <span class="ow">in</span> <span class="n">commands</span><span class="p">:</span>
+                <span class="n">output</span> <span class="o">=</span> <span class="n">con</span><span class="p">.</span><span class="n">send_config_set</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+                <span class="n">result</span><span class="p">[</span><span class="s">" "</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">command</span><span class="p">)]</span> <span class="o">=</span> <span class="n">output</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">except</span> <span class="p">(</span><span class="n">netmiko</span><span class="p">.</span><span class="n">NetmikoTimeoutException</span><span class="p">,</span> <span class="n">netmiko</span><span class="p">.</span><span class="n">NetmikoAuthenticationException</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">device</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'device_type'</span><span class="p">:</span> <span class="s">'juniper'</span><span class="p">,</span>
+        <span class="s">'host'</span><span class="p">:</span> <span class="s">'172.16.0.1'</span><span class="p">,</span> <span class="c1">#自分の環境にあわせて指定すること
+</span>        <span class="s">'username'</span><span class="p">:</span> <span class="s">'admin'</span><span class="p">,</span> <span class="c1">#自分の環境にあわせて指定すること
+</span>        <span class="s">'password'</span><span class="p">:</span> <span class="s">'admin'</span><span class="p">,</span> <span class="c1">#自分の環境にあわせて指定すること
+</span>        <span class="s">'port'</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="c1">#自分の環境にあわせて指定すること
+</span>    <span class="p">}</span>
+
+    <span class="n">before_result</span> <span class="o">=</span> <span class="n">send_show_command</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="p">[</span><span class="s">"show configuration | display set"</span><span class="p">])</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"conf/vMX_before.txt"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">before_result</span><span class="p">[</span><span class="s">"show configuration | display set"</span><span class="p">])</span>
+    
+    <span class="n">commands</span> <span class="o">=</span> <span class="p">[</span><span class="s">"set system host-name vMX"</span><span class="p">]</span>
+    <span class="n">result_conf</span> <span class="o">=</span> <span class="n">send_config_set</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">commands</span><span class="p">)</span>
+
+    <span class="n">after_result</span> <span class="o">=</span> <span class="n">send_show_command</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="p">[</span><span class="s">"show configuration | display set"</span><span class="p">])</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"conf/vMX_after.txt"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">after_result</span><span class="p">[</span><span class="s">"show configuration | display set"</span><span class="p">])</span>
+
+    <span class="n">subprocess</span><span class="p">.</span><span class="n">run</span><span class="p">([</span><span class="s">"diff"</span><span class="p">,</span><span class="s">"-u"</span><span class="p">,</span> <span class="s">"conf/vMX_before.txt"</span><span class="p">,</span> <span class="s">"conf/vMX_after.txt"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>このスクリプトは、以下の手順で動作します。</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">send_show_command</code>関数を定義。デバイス情報とコマンドを受け取って、コマンド入力した結果を返す</li>
+  <li><code class="language-plaintext highlighter-rouge">send_config_set</code>関数を定義。デバイス情報とコマンドを受け取って、コマンド実行した結果を返す</li>
+  <li>デバイスの情報（ホスト名、ユーザー名、パスワード、ポート番号(※通常は22)）を設定します。</li>
+  <li><code class="language-plaintext highlighter-rouge">send_show_command</code>関数を使って、デバイスの現在の設定を取得し、<code class="language-plaintext highlighter-rouge">conf</code>ディレクトリの<code class="language-plaintext highlighter-rouge">vMX_before.txt</code>に保存します。</li>
+  <li><code class="language-plaintext highlighter-rouge">send_config_set</code>関数を使って、デバイスのホスト名を変更します。</li>
+  <li>再度、<code class="language-plaintext highlighter-rouge">send_show_command</code>関数を使って、デバイスの設定を取得し、<code class="language-plaintext highlighter-rouge">conf</code>ディレクトリの<code class="language-plaintext highlighter-rouge">vMX_after.txt</code>に保存します。</li>
+  <li><code class="language-plaintext highlighter-rouge">subprocess.run</code>関数を使って、<code class="language-plaintext highlighter-rouge">vMX_before.txt</code>と<code class="language-plaintext highlighter-rouge">vMX_after.txt</code>の差分を表示します。（終わり）</li>
+</ol>
+
+<h2 id="実行結果">実行結果</h2>
+
+<p>スクリプトを実行すると、以下のような出力が得られます。host-nameの行だけ変更されていることが<code class="language-plaintext highlighter-rouge">diff</code>コマンドからわかります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>❯ python3.10 junos_conf.py
+--- conf/vMX_before.txt 2023-09-11 15:29:06
++++ conf/vMX_after.txt  2023-09-11 15:29:17
+@@ -1,5 +1,5 @@
+ set version 21.1R3.11
+-set system host-name vMX-addr-0
++set system host-name vMX
+ set system root-authentication encrypted-password "$6$GKTs4Nse$lvSTPRqwuF/2WUea879/1lwrlJ1T3Wv3ccZIZ0L.2uao7gR3ywFRKvqfqGeN1Kpbmsvn2.vZ4OAZsa5hWz4al1"
+ set system scripts language python3
+ set system login user jcluser uid 2000
+</code></pre></div></div>
+
+<h2 id="最後に">最後に</h2>
+<p>今回は<code class="language-plaintext highlighter-rouge">netmiko</code>ライブラリを利用してネットワーク機器の情報取得を設定変更を実施しました。シンプルな機能が備わっているためカスタマイズ性が高いライブラリなのかなーという印象でした。学習の一環としてテストコードとして例示したものよりかはさらに機能を加えて、より実用的なネットワーク自動化ツールを作成してみようかなと思っています。</p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#python">python</a>
+          
+            <a href="/tags#netmiko">netmiko</a>
+          
+        </div>
+      
+
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=netmiko%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6&url=http%3A%2F%2Flocalhost%3A4000%2F2023-09-11-netmiko-library%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fab fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2023-09-11-netmiko-library%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2023-09-11-netmiko-library%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2023-08-26-napalm-library/" data-toggle="tooltip" data-placement="top" title="napalmライブラリを使ってNW機器の情報を取得する">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="page-item next">
+          <a class="page-link" href="/2023-09-11-telnetlib-library/" data-toggle="tooltip" data-placement="top" title="telnetlibライブラリに関して">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+
+  
+
+  
+
+
+
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      
+<ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="mailto:junenu41@gmail.com" title="Email me">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Email me</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="/feed.xml" title="RSS">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">RSS</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/junenu" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://twitter.com/junenu41" title="Twitter">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Twitter</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://linkedin.com/in/junenu" title="LinkedIn">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">LinkedIn</span>
+   </a>
+  </li></ul>
+
+      
+      <p class="copyright text-muted">
+      
+        Jun Egawa
+        &nbsp;&bull;&nbsp;
+      
+      2023
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="http://localhost:4000/">www.junenu.dev</a>
+        </span>
+      
+
+      
+
+      
+
+      </p>
+      <p class="theme-by text-muted">
+        Powered by
+        <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>

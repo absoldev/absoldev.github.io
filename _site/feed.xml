@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    
+    <title>junenu.dev</title>
+    
+    
+    <description>This website is a virtual proof that I&apos;m awesome</description>
+    
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+      <item>
+        <title>ProxmoxをHM90にインストールする</title>
+        <description>
+          proxmox install on HM90 - 
+          Proxmox install on HM90
+Install
+Download
+Proxmox VE ISO Installerをインストールします。こちら
+
+Install
+インストールは、こちらを参考に
+
+Tips
+
+  HM90のBIOS設定で、VT-dを有効にする必要があります。
+  USBbootをする場合、BIOS設定で、USBのブート順位を上げる必要があります。
+  Proxmoxのインストール後、USBbootをする場合、BIOS設定で、USBのブート順位を下げる必要があります。
+  USBを挿入する箇所は、前面（電源ボタンがある方）で実施する必要があります。逆側では、USBbootができませんでした。（kernel panicエラーが出ます）
+  インストールの際に3%で20-30分ほど止まりますが、そのまま放置しておくと、インストールが完了します。
+
+
+        </description>
+        <pubDate>Fri, 29 Sep 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2023-09-29-proxmox-installonHM90/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023-09-29-proxmox-installonHM90/</guid>
+      </item>
+    
+      <item>
+        <title>Netbox Install</title>
+        <description>
+          手順と作業ログ - 
+          インストール手順 必要なパッケージのインストール sudo apt-get update sudo apt-get install \ ca-certificates \ curl \ gnupg \ lsb-release Dockerのdownload sudo mkdir -p /etc/apt/keyrings curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg echo \ &quot;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &amp;gt; /dev/null Dockerのインストール sudo apt-get...
+        </description>
+        <pubDate>Thu, 28 Sep 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2023-09-28-netbox-install-log/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023-09-28-netbox-install-log/</guid>
+      </item>
+    
+      <item>
+        <title>Test</title>
+        <description>
+          This is a test - 
+          Here’s a table: Number Next number Previous number Five Six Four Ten Eleven Nine Seven Eight Six Two Three One How about a yummy crepe? It can also be centered! Here’s a code chunk: var foo = function(x) { return(x + 5); } foo(3) And here is the same code...
+        </description>
+        <pubDate>Wed, 27 Sep 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2023-09-27-test/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023-09-27-test/</guid>
+      </item>
+    
+      <item>
+        <title>telnetlibライブラリに関して</title>
+        <description>
+          telnetlib library - 
+          はじめに telnetlibは、Pythonの標準ライブラリの一つで、Telnetセッションを制御するための機能を提供します。この記事では、Pythonのtelnetlibモジュールを使用して、ネットワークデバイスにTelnetで接続し、コマンドを実行する方法について説明します。 telnetlibとは telnetlibは、Pythonの標準ライブラリの一つで、Telnetクライアントを作成するためのクラスを提供します。このライブラリを使用することで、PythonスクリプトからTelnetサーバーに接続し、コマンドを実行したり、サーバーからのレスポンスを取得したりすることができます。 [https://docs.python.org/ja/3/library/telnetlib.html:embed:cite] 実装 以下は、telnetlibを使用したPythonスクリプトの例です。 import telnetlib from getpass import getpass # 接続先の情報 HOST = &quot;192.168.11.211&quot; USERNAME = input(&quot;Username: &quot;) PASSWORD = getpass() # Telnetセッションの開始 tn = telnetlib.Telnet(HOST) # ログイン tn.read_until(b&quot;Username: &quot;) tn.write(USERNAME.encode(&apos;ascii&apos;) + b&quot;\n&quot;) if PASSWORD: tn.read_until(b&quot;Password: &quot;) tn.write(PASSWORD.encode(&apos;ascii&apos;) + b&quot;\n&quot;) # コマンドの実行 tn.write(b&quot;show version\n&quot;) tn.write(b&quot;exit\n&quot;) #...
+        </description>
+        <pubDate>Mon, 11 Sep 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2023-09-11-telnetlib-library/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023-09-11-telnetlib-library/</guid>
+      </item>
+    
+      <item>
+        <title>netmikoライブラリに関して</title>
+        <description>
+          netmiko library - 
+          はじめに Pythonのnetmikoライブラリを使用することで、ネットワーク機器にSSHで接続し、コマンドを実行したり、設定を変更したりすることができます。この記事では、netmikoライブラリを使って、ネットワーク機器に接続し、コマンドを実行し、設定を変更する方法を解説します。 機器 コマンドを実行する機器：MacOS（Pythonが動けばなんでもOKです） 対象のNW機器：vMX（Juniperさんが提供しているvLABs上の機器を利用） netmikoとは netmikoは、複数のネットワークデバイスのベンダーに対応した、Pythonのライブラリです。netmikoを使用することで、SSHを使ってネットワークデバイスに接続し、コマンドの実行や設定の変更を行うことができます。 Pythonスクリプト 以下は、netmikoを使ってJuniperのネットワークデバイスに接続し、ホスト名を変更するPythonスクリプトの例です。 import netmiko import subprocess def send_show_command(device, commands): result = {} try: with netmiko.ConnectHandler(**device) as con: con.enable() for command in commands: output = con.send_command(command) result[command] = output return result except (netmiko.NetmikoTimeoutException, netmiko.NetmikoAuthenticationException) as e: print(e) def send_config_set(device, commands): result = {} commands...
+        </description>
+        <pubDate>Mon, 11 Sep 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2023-09-11-netmiko-library/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023-09-11-netmiko-library/</guid>
+      </item>
+    
+      <item>
+        <title>napalmライブラリを使ってNW機器の情報を取得する</title>
+        <description>
+          napalm library - 
+          napalmを使用してCisco IOS-XRデバイスから情報を取得する方法 napalmとは napalm (Network Automation and Programmability Abstraction Layer with Multivendor support) は、異なるネットワークデバイスベンダー間で共通のAPIを提供するPythonライブラリです。この記事では、napalm を使用して Cisco IOS-XR デバイスに接続し、基本的な情報を取得する方法を説明します。 [https://napalm.readthedocs.io/en/latest/:embed:cite] 動作環境 スクリプト実行側: OS: macOS Pythonバージョン: 3.10 実行環境: Pythonの仮想環境 (venv) を使用して実行 事前準備:pip3.10でnapalmをinstall pip3.10 install napalm 情報取得対象: デバイス: CiscoのiOS-XRを実行するデバイス アクセス: Cisco DevNet Sandbox を使用（注: 事前の登録が必要） DevNet Sandboxは、Ciscoの最新の製品と技術を試すための無料の仮想環境を提供するプラットフォームです。このスクリプトでは、DevNet Sandbox上のiOS-XRデバイスから情報を取得します。DevNet Sandboxを利用するためには、Cisco DevNetのウェブサイトでの事前登録が必要です。 [https://developer.cisco.com/site/sandbox/:embed:cite] スクリプトの内容 まず、以下のスクリプト...
+        </description>
+        <pubDate>Sat, 26 Aug 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2023-08-26-napalm-library/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023-08-26-napalm-library/</guid>
+      </item>
+    
+      <item>
+        <title>minikubeの構築と動作確認</title>
+        <description>
+          minikube install and test - 
+          前提 今回の検証を始めたモチベーションは、単純にk8sを触ってみたいなというのが1番でした。 あと、お家でk8sクラスタ組んでサービスデプロイしたいなー（docker単体だと辛いことが増えてきた）という2つのモチベーションでした。 作業環境 構築対象サーバー ubuntu22.04 vCPU 2 RAM 8GB ESXi上に構築（VMware playerでもVirtualBoxでもOK） 構築サーバーへのアクセス 同じセグメントにあるMacOSからsshで接続 構築手順 必要パッケージのinstall command sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y sudo apt install -y curl docker.io lynx minikubeのinstall command curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 chmod +x minikube sudo mv minikube /usr/local/bin/ 参考サイト kubectlのinstall command curl -LO...
+        </description>
+        <pubDate>Fri, 25 Aug 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2023-08-25-minikube/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023-08-25-minikube/</guid>
+      </item>
+    
+      <item>
+        <title>PythonでJSONを扱う</title>
+        <description>
+          Python JSON module - 
+          Pythonで扱うJSON JSON (JavaScript Object Notation) は、データ交換形式として幅広く使用されています。Pythonには、このJSONを効率的に扱うための標準ライブラリ、jsonモジュールが備わっています。 jsonモジュールの概要 jsonモジュールを利用することで、次の操作が可能になります： PythonオブジェクトをJSON文字列にエンコード JSON文字列をPythonオブジェクトにデコード この変換は、APIのレスポンスや設定ファイルとしてよく使われます。 エンコード: PythonからJSONへ json.dumps() Pythonのデータ型（例: ディクショナリやリスト）をJSON文字列に変換します。 import json person = { &apos;name&apos;: &apos;Alice&apos;, &apos;age&apos;: 30, &apos;hobbies&apos;: [&apos;reading&apos;, &apos;cycling&apos;] } # person is a dictionary print(type(person)) json_string = json.dumps(person) print(json_string) # json_string is a string print(type(json_string)) 実行結果 python3 dumps.py &amp;lt;class &apos;dict&apos;&amp;gt;...
+        </description>
+        <pubDate>Thu, 24 Aug 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2023-08-24-python-jsonmodule/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023-08-24-python-jsonmodule/</guid>
+      </item>
+    
+  </channel>
+</rss>

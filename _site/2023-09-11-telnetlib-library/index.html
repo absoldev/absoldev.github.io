@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 6.0.1 | Copyright Dean Attali 2023 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  <title>telnetlibライブラリに関して</title>
+
+  
+  <meta name="author" content="Jun Egawa">
+  
+
+  <meta name="description" content="telnetlib library">
+
+  
+
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="junenu.dev" href="http://localhost:4000/feed.xml">
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  <meta property="og:site_name" content="junenu.dev">
+  <meta property="og:title" content="telnetlibライブラリに関して">
+  <meta property="og:description" content="telnetlib library">
+
+  
+  <meta property="og:image" content="http://localhost:4000/assets/img/avatar-icon.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="Jun Egawa">
+  <meta property="og:article:published_time" content="2023-09-11T00:00:00+09:00">
+  <meta property="og:url" content="http://localhost:4000/2023-09-11-telnetlib-library/">
+  <link rel="canonical" href="http://localhost:4000/2023-09-11-telnetlib-library/">
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:site" content="@junenu41">
+  <meta name="twitter:creator" content="@junenu41">
+
+  <meta property="twitter:title" content="telnetlibライブラリに関して">
+  <meta property="twitter:description" content="telnetlib library">
+
+  
+  <meta name="twitter:image" content="http://localhost:4000/assets/img/avatar-icon.png">
+  
+
+  
+
+
+  
+
+  
+
+</head>
+
+
+<body>
+
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular"><a class="navbar-brand" href="http://localhost:4000/">junenu.dev</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/aboutme">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/disclaimer">Discaimer</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-search-link" href="#" title="Search">
+            <span id="nav-search-icon" class="fa fa-search"></span>
+            <span id="nav-search-text">Search</span>
+          </a>
+        </li></ul>
+  </div>
+
+  
+
+  
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        <a href="http://localhost:4000/">
+          <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/avatar-icon.png" />
+        </a>
+      </div>
+    </div>
+  
+
+</nav>
+
+
+
+<div id="beautifuljekyll-search-overlay">
+
+  <div id="nav-search-exit" title="Exit search">✕</div>
+  <input type="text" id="nav-search-input" placeholder="Search">
+  <ul id="search-results-container"></ul>
+  
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    var searchjson = '[ \
+       \
+        { \
+          "title"    : "ProxmoxをHM90にインストールする", \
+          "desc"     : "ProxmoxをHM90にインストールする", \
+          "category" : "proxmox", \
+          "url"      : "/2023-09-29-proxmox-installonHM90/", \
+          "date"     : "September 29, 2023" \
+        }, \
+       \
+        { \
+          "title"    : "Netbox Install", \
+          "desc"     : "Netbox Install", \
+          "category" : "netboxdocker", \
+          "url"      : "/2023-09-28-netbox-install-log/", \
+          "date"     : "September 28, 2023" \
+        }, \
+       \
+        { \
+          "title"    : "Test", \
+          "desc"     : "Test", \
+          "category" : "testmarkdown", \
+          "url"      : "/2023-09-27-test/", \
+          "date"     : "September 27, 2023" \
+        }, \
+       \
+        { \
+          "title"    : "telnetlibライブラリに関して", \
+          "desc"     : "telnetlibライブラリに関して", \
+          "category" : "pythontelnetlib", \
+          "url"      : "/2023-09-11-telnetlib-library/", \
+          "date"     : "September 11, 2023" \
+        }, \
+       \
+        { \
+          "title"    : "netmikoライブラリに関して", \
+          "desc"     : "netmikoライブラリに関して", \
+          "category" : "pythonnetmiko", \
+          "url"      : "/2023-09-11-netmiko-library/", \
+          "date"     : "September 11, 2023" \
+        }, \
+       \
+        { \
+          "title"    : "napalmライブラリを使ってNW機器の情報を取得する", \
+          "desc"     : "napalmライブラリを使ってNW機器の情報を取得する", \
+          "category" : "pythonnapalm", \
+          "url"      : "/2023-08-26-napalm-library/", \
+          "date"     : "August 26, 2023" \
+        }, \
+       \
+        { \
+          "title"    : "minikubeの構築と動作確認", \
+          "desc"     : "minikubeの構築と動作確認", \
+          "category" : "k8skubernetesminikube", \
+          "url"      : "/2023-08-25-minikube/", \
+          "date"     : "August 25, 2023" \
+        }, \
+       \
+        { \
+          "title"    : "PythonでJSONを扱う", \
+          "desc"     : "PythonでJSONを扱う", \
+          "category" : "pythonjson", \
+          "url"      : "/2023-08-24-python-jsonmodule/", \
+          "date"     : "August 24, 2023" \
+        }, \
+       \
+       \
+        { \
+          "title"    : "About me", \
+          "desc"     : "About me", \
+          "category" : "page", \
+          "url"      : "/aboutme/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Disclaimer", \
+          "desc"     : "Disclaimer", \
+          "category" : "page", \
+          "url"      : "/disclaimer/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "junenu.dev", \
+          "desc"     : "junenu.dev", \
+          "category" : "page", \
+          "url"      : "/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Tag Index", \
+          "desc"     : "Tag Index", \
+          "category" : "page", \
+          "url"      : "/tags/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "junenu.dev", \
+          "desc"     : "junenu.dev", \
+          "category" : "page", \
+          "url"      : "/page2/", \
+          "date"     : "January 1, 1970" \
+        } \
+       \
+    ]';
+    searchjson = JSON.parse(searchjson);
+
+    var sjs = SimpleJekyllSearch({
+      searchInput: document.getElementById('nav-search-input'),
+      resultsContainer: document.getElementById('search-results-container'),
+      json: searchjson
+    });
+  </script>
+</div>
+
+
+
+
+
+  <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>telnetlibライブラリに関して</h1>
+          
+            
+              <h2 class="post-subheading">telnetlib library</h2>
+            
+          
+
+          
+            <span class="post-meta">Posted on September 11, 2023</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</header>
+
+
+
+
+<div class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+        
+        
+        
+
+        <div id="header-gh-btns">
+          
+            
+              
+                  <iframe src="https://ghbtns.com/github-btn.html?user=junenu&type=follow&count=true" frameborder="0" scrolling="0" width="220px" height="20px"></iframe>
+              
+            
+          
+        </div>
+      
+
+      
+
+      <article role="main" class="blog-post">
+        <h2 id="はじめに">はじめに</h2>
+
+<p><code class="language-plaintext highlighter-rouge">telnetlib</code>は、Pythonの標準ライブラリの一つで、Telnetセッションを制御するための機能を提供します。この記事では、Pythonの<code class="language-plaintext highlighter-rouge">telnetlib</code>モジュールを使用して、ネットワークデバイスにTelnetで接続し、コマンドを実行する方法について説明します。</p>
+
+<h2 id="telnetlibとは">telnetlibとは</h2>
+
+<p><code class="language-plaintext highlighter-rouge">telnetlib</code>は、Pythonの標準ライブラリの一つで、Telnetクライアントを作成するためのクラスを提供します。このライブラリを使用することで、PythonスクリプトからTelnetサーバーに接続し、コマンドを実行したり、サーバーからのレスポンスを取得したりすることができます。</p>
+
+<p>[https://docs.python.org/ja/3/library/telnetlib.html:embed:cite]</p>
+
+<h2 id="実装">実装</h2>
+
+<p>以下は、<code class="language-plaintext highlighter-rouge">telnetlib</code>を使用したPythonスクリプトの例です。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">telnetlib</span>
+<span class="kn">from</span> <span class="nn">getpass</span> <span class="kn">import</span> <span class="n">getpass</span>
+
+<span class="c1"># 接続先の情報
+</span><span class="n">HOST</span> <span class="o">=</span> <span class="s">"192.168.11.211"</span>
+<span class="n">USERNAME</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Username: "</span><span class="p">)</span>
+<span class="n">PASSWORD</span> <span class="o">=</span> <span class="n">getpass</span><span class="p">()</span>
+
+<span class="c1"># Telnetセッションの開始
+</span><span class="n">tn</span> <span class="o">=</span> <span class="n">telnetlib</span><span class="p">.</span><span class="n">Telnet</span><span class="p">(</span><span class="n">HOST</span><span class="p">)</span>
+
+<span class="c1"># ログイン
+</span><span class="n">tn</span><span class="p">.</span><span class="n">read_until</span><span class="p">(</span><span class="sa">b</span><span class="s">"Username: "</span><span class="p">)</span>
+<span class="n">tn</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">USERNAME</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'ascii'</span><span class="p">)</span> <span class="o">+</span> <span class="sa">b</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">PASSWORD</span><span class="p">:</span>
+    <span class="n">tn</span><span class="p">.</span><span class="n">read_until</span><span class="p">(</span><span class="sa">b</span><span class="s">"Password: "</span><span class="p">)</span>
+    <span class="n">tn</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">PASSWORD</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'ascii'</span><span class="p">)</span> <span class="o">+</span> <span class="sa">b</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+
+<span class="c1"># コマンドの実行
+</span><span class="n">tn</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s">"show version</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+<span class="n">tn</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s">"exit</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+
+<span class="c1"># 結果の表示
+</span><span class="k">print</span><span class="p">(</span><span class="n">tn</span><span class="p">.</span><span class="n">read_all</span><span class="p">().</span><span class="n">decode</span><span class="p">(</span><span class="s">'ascii'</span><span class="p">))</span>
+
+<span class="c1"># セッションの終了
+</span><span class="n">tn</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>このスクリプトは以下の手順で動作します。</p>
+
+<ol>
+  <li>ユーザーからホスト、ユーザー名、およびパスワードの情報を取得します。ユーザー名の入力には<code class="language-plaintext highlighter-rouge">input</code>を利用し、パスワードの入力には<code class="language-plaintext highlighter-rouge">getpass</code>を利用しています。</li>
+  <li>Telnetセッションを開始し、取得した情報を使ってログインします。</li>
+  <li>ログインが成功したら、<code class="language-plaintext highlighter-rouge">show version</code>コマンドを実行し、その後<code class="language-plaintext highlighter-rouge">exit</code>コマンドを実行してセッションを終了します。</li>
+  <li>サーバーからの全てのレスポンスを受信し、コンソールに表示します。</li>
+  <li>Telnetセッションを閉じます。</li>
+</ol>
+
+<h2 id="実行結果">実行結果</h2>
+
+<p>スクリプトを実行すると、以下のような出力が得られます。対象のNW機器のOSにはAristaさんのvEOSを利用しています。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>❯ python3.10 test.py
+
+Last login: Mon Sep 11 02:37:57 from 192.168.10.157
+show version
+exit
+eos01&gt;show version
+ vEOS
+Hardware version:      
+Serial number:         
+Hardware MAC address:  5000.0072.8b31
+System MAC address:    5000.0072.8b31
+
+Software image version: 4.24.11M
+Architecture:           i686
+Internal build version: 4.24.11M-28848826.42411M
+Internal build ID:      27bc0c4a-415b-49ca-8ad9-eb1a4323df22
+
+Uptime:                 0 weeks, 0 days, 2 hours and 29 minutes
+Total memory:           2014548 kB
+Free memory:            1316888 kB
+
+eos01&gt;exit
+</code></pre></div></div>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>Pythonの<code class="language-plaintext highlighter-rouge">telnetlib</code>モジュールを使えば、Telnetを使ってネットワークデバイスに接続し、コマンドを実行することができます。ただし、セキュリティの観点から、実運用環境ではTelnetよりも安全なプロトコル（例：SSH）を使用するのが一般的かと思いますので、あくまで一つの手段に過ぎないかなと思っています。</p>
+
+<h2 id="注意事項念のため">注意事項（念のため）</h2>
+
+<p>Telnetはセキュリティが非常に低いプロトコルです。ユーザー名、パスワード、コマンド、レスポンスなど、全ての通信が平文で送信されます。</p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#python">python</a>
+          
+            <a href="/tags#telnetlib">telnetlib</a>
+          
+        </div>
+      
+
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=telnetlib%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6&url=http%3A%2F%2Flocalhost%3A4000%2F2023-09-11-telnetlib-library%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fab fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2023-09-11-telnetlib-library%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2023-09-11-telnetlib-library%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2023-09-11-netmiko-library/" data-toggle="tooltip" data-placement="top" title="netmikoライブラリに関して">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="page-item next">
+          <a class="page-link" href="/2023-09-27-test/" data-toggle="tooltip" data-placement="top" title="Test">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+
+  
+
+  
+
+
+
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      
+<ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="mailto:junenu41@gmail.com" title="Email me">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Email me</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="/feed.xml" title="RSS">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">RSS</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/junenu" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://twitter.com/junenu41" title="Twitter">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Twitter</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://linkedin.com/in/junenu" title="LinkedIn">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">LinkedIn</span>
+   </a>
+  </li></ul>
+
+      
+      <p class="copyright text-muted">
+      
+        Jun Egawa
+        &nbsp;&bull;&nbsp;
+      
+      2023
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="http://localhost:4000/">www.junenu.dev</a>
+        </span>
+      
+
+      
+
+      
+
+      </p>
+      <p class="theme-by text-muted">
+        Powered by
+        <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>
